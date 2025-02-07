@@ -13,7 +13,6 @@ int main() {
     setup_gpio_leds();  //Configuração incial dos leds
   
     gpio_set_irq_interrupt_btn();// Configuração da interrupção com callback para botão
-  
     
     bool cor = true;
 

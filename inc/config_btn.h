@@ -12,7 +12,6 @@
 
 // Variáveis globais 
 static volatile uint32_t last_time = 0; // Armazena o tempo do último evento (em microssegundos)
-static volatile uint32_t last_time_B = 0;
 
 void setup_gpio_leds(){
   gpio_init(LED_GREEN);
@@ -45,11 +44,13 @@ void gpio_irq_handler(uint gpio, uint32_t events){
     last_time = current_time; // Atualiza o tempo do último evento
 
     if (gpio == BTN_A) {
-      printf("Botão A pressionado!\n");
+      printf("\nBotão A pressionado. ");
       gpio_put(LED_GREEN, !gpio_get(LED_GREEN)); // Alterna o estado
-    } else if (gpio == BTN_B ) {
-      printf("Botão B pressionado!\n");
-      gpio_put(LED_BLUE, !gpio_get(LED_BLUE)); // Alterna o estado
+      printf("LED Verde %s\n", gpio_get(LED_GREEN) ? "LIGADO!" : "DESLIGADO!");
+    } else if (gpio == BTN_B) {
+        printf("\nBotão B pressionado. ");
+        gpio_put(LED_BLUE, !gpio_get(LED_BLUE)); // Alterna o estado
+        printf("LED Azul %s\n", gpio_get(LED_BLUE) ? "LIGADO!" : "DESLIGADO!");
     }
   }
 }
