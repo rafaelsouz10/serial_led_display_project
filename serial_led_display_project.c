@@ -38,12 +38,13 @@ int main() {
 
     while (true) {
         sleep_ms(50);
-        printf("\nDigite uma tecla: ");
-        scanf(" %c", &caractere[0]);
+        printf("\nDigite uma Caractere: ");
+        scanf("%c", &caractere[0]);
         caractere[1] = '\0'; // Garante terminação de string
 
         if (caractere[0] != '\0') {
-            controle_numero(caractere);
+            printf("%c\n", caractere[0]);
+            controle_numero(caractere[0]);
 
             cor = !cor;
             // Atualiza o conteúdo do display com animações
@@ -54,8 +55,6 @@ int main() {
             ssd1306_draw_string(&ssd, caractere, 60, 48); // Desenha uma string      
             ssd1306_send_data(&ssd); // Atualiza o display
         }
-
-        
     }
     return 0;
 }
