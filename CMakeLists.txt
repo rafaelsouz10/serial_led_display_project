@@ -49,7 +49,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(serial_led_display_project serial_led_display_project.c )
+add_executable(serial_led_display_project serial_led_display_project.c inc/ssd1306.c )
 
 pico_set_program_name(serial_led_display_project "serial_led_display_project")
 pico_set_program_version(serial_led_display_project "0.1")
@@ -74,7 +74,8 @@ target_include_directories(serial_led_display_project PRIVATE
 target_link_libraries(serial_led_display_project 
         hardware_pio
         hardware_clocks
-        )
+        hardware_i2c   # para controle dos pinos i2c
+)
 
 pico_add_extra_outputs(serial_led_display_project)
 
