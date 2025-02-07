@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/serial_led_display_project.uf2'
+elf = 'build/serial_led_display_project.elf'
