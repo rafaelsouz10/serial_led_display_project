@@ -1,3 +1,6 @@
+#ifndef MATRIZ_LED_H
+#define MATRIZ_LED_H
+
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
 
@@ -100,3 +103,5 @@ void print_sprite(int matriz[5][5][3]) {
     }
   }
 }
+
+#endif

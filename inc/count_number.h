@@ -95,7 +95,6 @@ void controle_numero(char number_control){
     else if (number_control == '7') print_sprite(frame7);
     else if (number_control == '8') print_sprite(frame8);
     else if (number_control == '9') print_sprite(frame9);
-    else printf("numero não encontrado.");
 
     npWrite();
 }

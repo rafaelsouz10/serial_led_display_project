@@ -49,7 +49,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(serial_led_display_project serial_led_display_project.c inc/ssd1306.c )
+add_executable(serial_led_display_project serial_led_display_project.c inc/ssd1306/ssd1306.c )
 
 pico_set_program_name(serial_led_display_project "serial_led_display_project")
 pico_set_program_version(serial_led_display_project "0.1")
