@@ -3,13 +3,17 @@
 #include <inc/matriz_led.h>
 #include <inc/count_number.h>
 #include <inc/display_ssd1306.h>
-
+#include <inc/config_btn.h>
 
 int main() {
     stdio_init_all(); // Inicializa entradas e saídas.
     npInit(LED_PIN); // Inicializa matriz de LEDs NeoPixel.
-    
     displayInit(); //Inicializa as configurações do display
+    setup_gpio_buttons(); // Configuração inicial ds botões
+    setup_gpio_leds();  //Configuração incial dos leds
+  
+    gpio_set_irq_interrupt_btn();// Configuração da interrupção com callback para botão
+  
     
     bool cor = true;
 
