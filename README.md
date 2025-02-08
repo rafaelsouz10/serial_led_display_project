@@ -10,8 +10,7 @@ Projeto da atividade **EmbarcaTech**, sobre comunicação serial (UART e I2C) e 
     ✅ **Interação com Botões**: Alternância do LED RGB ao pressionar os botões A e B, com mensagens exibidas no display e no Serial Monitor.
     ✅ **Uso de Interrupções e Debounce**: Implementação de IRQs e tratamento de bouncing nos botões.
 
-//A imagem do projeto irá aqui
-
+![image](https://github.com/user-attachments/assets/bf56e9b6-b3f5-4c58-bdb0-8d2c7e683358)
 
 ## Requisitos
 
