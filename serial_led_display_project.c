@@ -24,8 +24,8 @@ int main() {
         sleep_ms(50);
 
         // Atualiza as variáveis com o estado dos LEDs azul e verde
-        sprintf(estado_led_blue, "LED AZUL %s", led_blue_state ? "ON" : "OFF");
-        sprintf(estado_led_green, "LED VERDE %s", led_green_state ? "ON" : "OFF");
+        sprintf(estado_led_blue, "Led Azul %s", led_blue_state ? "ON" : "OFF");
+        sprintf(estado_led_green, "Led Verde %s", led_green_state ? "ON" : "OFF");
 
         ssd1306_fill(&ssd, !cor); // Limpa o display
         // Atualiza o conteúdo do display com animações
