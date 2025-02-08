@@ -16,7 +16,7 @@ int main() {
     
     bool cor = true;
 
-    char caractere[2] = {'\0'}; // Inicializa com o caractere '-'
+    char caractere[2] = {'\0'}; //variável para armazenar o caracter digitado
     char estado_led_blue[20];   // Variável para armazenar o estado do LED azul
     char estado_led_green[20];   // Variável para armazenar o estado do LED verde
 
@@ -36,13 +36,13 @@ int main() {
         ssd1306_draw_string(&ssd, caractere, 60, 48); // Desenha uma string  
         ssd1306_send_data(&ssd); // Atualiza o display
         
-        printf("\nDigite um Caractere: ");
-        scanf(" %c", &caractere[0]);
-        
-        if (caractere[0] != '\0') {
-            printf("%c\n", caractere[0]);
-            controle_numero(caractere[0]); 
-        } 
+        if (stdio_usb_connected()) { 
+            int c = getchar_timeout_us(100000); // Aguarda até 100ms para receber um caractere
+            if (c != PICO_ERROR_TIMEOUT && c != '\n') { // Ignora o timeout e novas linhas
+                caractere[0] = (char)c; // Atualiza o caractere APENAS se for novo
+                controle_numero(caractere[0]);
+            }
+        }
     }
     return 0;
 }
