@@ -166,7 +166,7 @@ void ssd1306_draw_char(ssd1306_t *ssd, char c, uint8_t x, uint8_t y)
   {
     index = (c - '0' + 1) * 8; // Para números
   }
-  else if (c >= 'a' && c <= 'z')
+  else if (c >= 'a' && c <= 'z') //adicionado para implementação de letras minúsculas
   {
     index = (c - 'a' + 11 + 26) * 8; // Para letras minúsculas
   }

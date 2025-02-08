@@ -47,13 +47,13 @@ void gpio_irq_handler(uint gpio, uint32_t events){
 
     if (gpio == BTN_A) {
       printf("\nBotão A pressionado. ");
-      led_green_state = !led_green_state; // Alterna o estado
+      led_green_state = !led_green_state; // Alterna o estado do led verde
       gpio_put(LED_GREEN, led_green_state);
       printf("LED Verde %s\n", led_green_state ? "LIGADO!" : "DESLIGADO!");
 
     } else if (gpio == BTN_B) {
       printf("\nBotão B pressionado. ");
-      led_blue_state = !led_blue_state; // Alterna o estado
+      led_blue_state = !led_blue_state; // Alterna o estado do led azul
       gpio_put(LED_BLUE, led_blue_state);
       printf("LED Azul %s\n", led_blue_state ? "LIGADO!" : "DESLIGADO!");
     }

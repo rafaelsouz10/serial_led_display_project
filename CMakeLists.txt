@@ -74,7 +74,7 @@ target_include_directories(serial_led_display_project PRIVATE
 target_link_libraries(serial_led_display_project 
         hardware_pio
         hardware_clocks
-        hardware_i2c   # para controle dos pinos i2c
+        hardware_i2c
 )
 
 pico_add_extra_outputs(serial_led_display_project)
