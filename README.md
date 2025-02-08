@@ -5,9 +5,10 @@
 ## Descrição do Projeto
 
 Projeto da atividade **EmbarcaTech**, sobre comunicação serial (UART e I2C) e o controle de dispositivos na placa BitDogLab. A implementação inclui:
-    ✅ **Entrada Serial e display SSD1306**: Captura de caracteres via Serial Monitor para exibição no display SSD1306.
-    ✅ **Matriz de LEDs WS2812**: Exibição de símbolos numéricos ao receber números entre 0 e 9.
-    ✅ **Interação com Botões**: Alternância do LED RGB ao pressionar os botões A e B, com mensagens exibidas no display e no Serial Monitor.
+    
+    ✅ **Entrada Serial e display SSD1306**: Captura de caracteres via Serial Monitor para exibição no display SSD1306.  
+    ✅ **Matriz de LEDs WS2812**: Exibição de símbolos numéricos ao receber números entre 0 e 9.    
+    ✅ **Interação com Botões**: Alternância do LED RGB ao pressionar os botões A e B, com mensagens exibidas no display e no Serial Monitor.   
     ✅ **Uso de Interrupções e Debounce**: Implementação de IRQs e tratamento de bouncing nos botões.
 
 ![image](https://github.com/user-attachments/assets/bf56e9b6-b3f5-4c58-bdb0-8d2c7e683358)
