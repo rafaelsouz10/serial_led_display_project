@@ -39,7 +39,7 @@
       "top": -0.1,
       "left": -169.3,
       "rotate": 90,
-      "attrs": { "color": "blue" }
+      "attrs": { "color": "green" }
     },
     {
       "type": "wokwi-pushbutton",
@@ -47,7 +47,7 @@
       "top": -0.1,
       "left": -102.1,
       "rotate": 90,
-      "attrs": { "color": "green" }
+      "attrs": { "color": "blue" }
     },
     { "type": "wokwi-vcc", "id": "vcc1", "top": -8.84, "left": 163.2, "attrs": {} }
   ],
@@ -60,8 +60,8 @@
     [ "vcc1:VCC", "oled1:VCC", "red", [ "v9.6", "h38.4" ] ],
     [ "r1:1", "rgb1:COM", "black", [ "h0" ] ],
     [ "pico:GND.4", "r1:2", "black", [ "h0" ] ],
-    [ "pico:GP5", "btn1:2.r", "blue", [ "h0" ] ],
-    [ "pico:GP6", "btn2:2.r", "green", [ "h-82.85", "v-61.05" ] ],
+    [ "pico:GP5", "btn1:2.r", "green", [ "h0" ] ],
+    [ "pico:GP6", "btn2:2.r", "blue", [ "h-82.85", "v-61.05" ] ],
     [ "pico:GND.2", "btn2:1.r", "black", [ "h0" ] ],
     [ "btn1:1.r", "pico:GND.2", "black", [ "v0" ] ],
     [ "pico:GP13", "rgb1:R", "red", [ "h0" ] ],

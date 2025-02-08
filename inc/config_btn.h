@@ -4,14 +4,16 @@
 #include "hardware/timer.h"
 
 //definição de GPIO LEDS
-#define LED_GREEN 12
-#define LED_BLUE 11
+#define LED_GREEN 11
+#define LED_BLUE 12
 //definição de GPIO botões
 #define BTN_A 5
 #define BTN_B 6
 
 // Variáveis globais 
 static volatile uint32_t last_time = 0; // Armazena o tempo do último evento (em microssegundos)
+bool led_green_state = false;
+bool led_blue_state = false;
 
 void setup_gpio_leds(){
   gpio_init(LED_GREEN);
@@ -45,12 +47,15 @@ void gpio_irq_handler(uint gpio, uint32_t events){
 
     if (gpio == BTN_A) {
       printf("\nBotão A pressionado. ");
-      gpio_put(LED_GREEN, !gpio_get(LED_GREEN)); // Alterna o estado
-      printf("LED Verde %s\n", gpio_get(LED_GREEN) ? "LIGADO!" : "DESLIGADO!");
+      led_green_state = !led_green_state; // Alterna o estado
+      gpio_put(LED_GREEN, led_green_state);
+      printf("LED Verde %s\n", led_green_state ? "LIGADO!" : "DESLIGADO!");
+
     } else if (gpio == BTN_B) {
-        printf("\nBotão B pressionado. ");
-        gpio_put(LED_BLUE, !gpio_get(LED_BLUE)); // Alterna o estado
-        printf("LED Azul %s\n", gpio_get(LED_BLUE) ? "LIGADO!" : "DESLIGADO!");
+      printf("\nBotão B pressionado. ");
+      led_blue_state = !led_blue_state; // Alterna o estado
+      gpio_put(LED_BLUE, led_blue_state);
+      printf("LED Azul %s\n", led_blue_state ? "LIGADO!" : "DESLIGADO!");
     }
   }
 }
