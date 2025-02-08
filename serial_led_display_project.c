@@ -16,7 +16,7 @@ int main() {
     
     bool cor = true;
 
-    char caractere[2] = {'\0'}; //variável para armazenar o caracter digitado
+    char caractere[2] = {'-', '\0'}; //vetor[2] para armazenar o caracter digitado com um caractere nulo, visto que o displa aceita somente string
     char estado_led_blue[20];   // Variável para armazenar o estado do LED azul
     char estado_led_green[20];   // Variável para armazenar o estado do LED verde
 
@@ -38,8 +38,8 @@ int main() {
         
         if (stdio_usb_connected()) { 
             int c = getchar_timeout_us(100000); // Aguarda até 100ms para receber um caractere
-            if (c != PICO_ERROR_TIMEOUT && c != '\n') { // Ignora o timeout e novas linhas
-                caractere[0] = (char)c; // Atualiza o caractere APENAS se for novo
+            if (c != PICO_ERROR_TIMEOUT && c != '\n') { // Ignora o timeout e novas linhas '\n'
+                caractere[0] = (char)c; // Atualiza o caractere
                 controle_numero(caractere[0]);
             }
         }
